@@ -1,6 +1,6 @@
 
 
-export class CursoMatriculado {
+module.exports = class CursoMatriculado {
     constructor (Curso) {
         this.Curso = Curso;
         this.porcentagemConcluida = 0;

@@ -1,6 +1,6 @@
 
 
-export class Curso {
+module.exports = class Curso {
     constructor (nome, descricao, cargaHoraria) {
         this.nome = nome;
         this.descricao = descricao;
