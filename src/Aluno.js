@@ -6,7 +6,14 @@ module.exports = class Aluno {
         this.premium = false;
         this.id = uuidv4();
         this.cursosMatriculados = new Array();
+        this.carteira = 0.0;
     }
+
+
+    setPremium(){
+        this.premium = !this.premium;
+    }
+
 
     addCurso(curso) {
         this.cursosMatriculados.push(curso);
@@ -14,5 +21,10 @@ module.exports = class Aluno {
 
     hasPremium(numeroCursosConcluidos) {
 
+    }
+
+    exchangeCripto(numCursosConcluidos){
+        let valor = this.cursosMatriculados.length;
+        this.carteira = this.carteira + (0.0005 * valor);
     }
 }
