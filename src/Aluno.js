@@ -13,6 +13,7 @@ module.exports = class Aluno {
     }
 
     hasPremium(numeroCursosConcluidos) {
-
+        if (this.cursosMatriculados.every(x => x.concluido == true) && this.cursosMatriculados.length >= numeroCursosConcluidos)
+            this.premium = true;
     }
 }
