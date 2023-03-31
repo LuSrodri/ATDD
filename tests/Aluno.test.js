@@ -7,8 +7,7 @@ test('Dado um aluno cadastrado e com 12 cursos concluídos deve liberar premium'
     let aluno = new Aluno("Lucas");
     for (let i =0;i<12;i++){
         let cc = new CursoMatriculado(new Curso(("Curso"+(i+1)),("Descricao"+(i+1)),100));
-        cc.porcentagemConcluida = 100;
-        cc.concluido = true;
+        cc.porcentagemConcluido = 100;
         aluno.addCurso(cc);
     }
 
@@ -23,10 +22,11 @@ test('Dado um aluno cadastrado e com a média acima de 7, quando fizer login, en
     //Arrange
     let aluno = new Aluno("Raissa");
     let cc = new CursoMatriculado(new Curso("Curso1","Descricao1",100));
+    cc.porcentagemConcluido = 100;
     aluno.addCurso(cc);
 
     //Act
-    aluno.cursosMatriculados[0].setMedia = 10;
+    aluno.cursosMatriculados[0].media = 10;
 
     //Assert
     expect(aluno.cursosMatriculados[0].responderForum).toBe(true);
