@@ -18,3 +18,16 @@ test('Dado um aluno cadastrado e com 12 cursos concluídos deve liberar premium'
     //Assert
     expect(aluno.premium).toBe(true);
 });
+
+test('Dado um aluno cadastrado e com a média acima de 7, quando fizer login, então ele escreve comentarios no forum', () => {
+    //Arrange
+    let aluno = new Aluno("Raissa");
+    let cc = new CursoMatriculado(new Curso("Curso1","Descricao1",100));
+    aluno.addCurso(cc);
+
+    //Act
+    aluno.cursosMatriculados[0].setMedia = 10;
+
+    //Assert
+    expect(aluno.cursosMatriculados[0].responderForum).toBe(true);
+});
